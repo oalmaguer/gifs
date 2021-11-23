@@ -16,21 +16,21 @@
     </div>
   </div>
 
-  <div *ngIf="random" >
+  <div *ngIf="random">
     <a (click)="downloadImage(response.data.images.downsized_medium.url, response.data.title)">
-        <img src="{{response.data.images.downsized_medium.url}}" class="m-2" id="random" />
+        <img src="{{response.data.images.downsized_medium.url}}" class="m-2 mx-auto" id="random" />
     </a>
   </div>
 
-  <div class="container">
-      <ul>
-    <div class="row">
-        <div class="col-sm-3" *ngFor="let item of gifArray">
-            <a (click)="downloadImage(item.images.downsized_medium.url, item.title)">
-                <img src="{{item.images.downsized_medium.url}}" width="100%" class="m-2" />
-            </a>
+<div class="container">
+    <ul class="mx-auto">
+        <div class="row justify-content-center">
+            <div class="col-sm-3" *ngFor="let item of gifArray">
+                <a (click)="downloadImage(item.images.downsized_medium.url, item.title)">
+                    <img src="{{item.images.downsized_medium.url}}"  class="m-2 mx-auto" />
+                </a>
             </div>
-    </div>
-</ul>
-  </div>
+        </div>
+    </ul>
+</div>
  

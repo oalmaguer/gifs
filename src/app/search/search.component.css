@@ -13,3 +13,12 @@
     object-fit: contain;
 }
 
+.container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: inline;
+}
