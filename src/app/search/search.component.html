@@ -1,0 +1,36 @@
+<div class="jumbotron jumbotron-fluid mt-5">
+    <div class="container">
+      <h1 class="display-4">Gif Downloader</h1>
+      <p class="lead">Look for any topic and download your favorite gif!.</p>
+      <form [formGroup]="searchForm" class="text-center">
+        <input type="text" 
+        placeholder="Search Gif!"
+        formControlName="inputText" 
+        class="form"
+        >
+        <button class="btn btn-primary m-3" (click)="search()">Search!</button>
+        <button class="btn btn-success m-3" (click)="trending()">Trending!</button>
+        <button class="btn btn-danger m-3" (click)="randomGif()">Random!</button>
+        <h2 *ngIf="clicked">Click to save your favorite gif!</h2>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="random" >
+    <a (click)="downloadImage(response.data.images.downsized_medium.url, response.data.title)">
+        <img src="{{response.data.images.downsized_medium.url}}" class="m-2" id="random" />
+    </a>
+  </div>
+
+  <div class="container">
+      <ul>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let item of gifArray">
+            <a (click)="downloadImage(item.images.downsized_medium.url, item.title)">
+                <img src="{{item.images.downsized_medium.url}}" width="100%" class="m-2" />
+            </a>
+            </div>
+    </div>
+</ul>
+  </div>
+ 

@@ -1,0 +1,15 @@
+
+.jumbotron {
+    background-color: transparent;
+    color: white;
+}
+.form {
+    width: 100%;
+}
+
+.random ,img {
+    height: 50vh;
+    width: 100%;
+    object-fit: contain;
+}
+
