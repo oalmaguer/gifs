@@ -14,6 +14,9 @@ export class SearchComponent implements OnInit {
   gifArray: Array<any> = [];
   clicked: boolean;
   random: boolean = false;
+  paginationButtons: Array<any> = [];
+  offset: number = 0;
+  firstTime: boolean = true;
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
@@ -31,9 +34,15 @@ export class SearchComponent implements OnInit {
     this.searchService.getTrending().subscribe(elem => {
       this.response = elem;
       console.log(this.response);
+      var numberOfButtons = this.response.pagination.total_count / this.response.pagination.count;
+      for (var i=0; i<=numberOfButtons;i++) {
+        this.paginationButtons.push(i);
+      }
+      console.log(numberOfButtons);
       this.response.data.map(elem => {
         this.gifArray.push(elem);
       })
+      this.firstTime = false;
     })
   }
 

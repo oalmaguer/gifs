@@ -15,22 +15,27 @@
       </form>
     </div>
   </div>
-
   <div *ngIf="random">
     <a (click)="downloadImage(response.data.images.downsized_medium.url, response.data.title)">
-        <img src="{{response.data.images.downsized_medium.url}}" class="m-2 mx-auto" id="random" />
+        <img src="{{response.data.images.downsized_medium.url}}" class="mx-auto" id="random" class="imagerandom" />
     </a>
   </div>
 
 <div class="container">
     <ul class="mx-auto">
         <div class="row justify-content-center">
-            <div class="col-sm-3" *ngFor="let item of gifArray">
+            <div class="col-sm-3 image" *ngFor="let item of gifArray">
                 <a (click)="downloadImage(item.images.downsized_medium.url, item.title)">
-                    <img src="{{item.images.downsized_medium.url}}"  class="m-2 mx-auto" />
+                    <img src="{{item.images.downsized_medium.url}}"  class="m-0 mx-auto imagenormal" />
                 </a>
             </div>
         </div>
     </ul>
+
+  <!-- <div class="pagination">
+    <div *ngFor="let button of paginationButtons">
+      <button (click)="trending()">{{button}}</button>
+    </div>
+  </div> -->
 </div>
  

@@ -7,12 +7,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SecretComponent } from './secret/secret.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
+    SecretComponent,
   ],
   imports: [
     BrowserModule,

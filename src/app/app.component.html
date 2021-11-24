@@ -9,6 +9,11 @@
     <a ngbNavLink>About</a>
     <ng-template ngbNavContent><p class="template">I created this just because I was bored</p></ng-template>
   </li>
+
+  <li ngbNavItem>
+    <a ngbNavLink>Secret</a>
+    <ng-template ngbNavContent><app-secret></app-secret></ng-template>
+  </li>
  
 </ul>
 <div [ngbNavOutlet]="nav"></div>
